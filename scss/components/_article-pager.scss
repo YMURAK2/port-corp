@@ -1,0 +1,70 @@
+@use "../global/index" as g;
+
+.article-pager {
+  margin-top: 40px;
+
+  &__container {
+    position:relative;
+    font-size: 12px;
+    line-height: 1.5;
+    padding: 15px 0px;
+    border-top: 1px solid g.$green;
+    border-bottom: 1px solid g.$green;
+    display: flex;
+    align-items: center;
+
+    @include g.mq(md){
+      font-size:14px;
+    }
+  }
+
+  &__prev {
+    padding: 15px 15px 15px 25px;
+    width: 50%;
+    border-right: 1px solid g.$green;
+    @include g.transition($duration: 0.3);
+
+    &:hover {
+      background-color: g.$lightgray;
+    }
+
+    &::before{
+      font-family: "Font Awesome 5 Free";
+      content:"\f104";
+      font-weight: 900;
+      font-size:1.2em;
+      display: block;
+      position:absolute;
+      top:calc(50% - .6em);
+      left:5px;
+    }
+  }
+
+  &__next {
+    padding: 15px 25px 15px 15px;
+    width: 50%;
+    @include g.transition($duration: 0.3);
+
+    &:hover {
+      background-color: g.$lightgray;
+    }
+
+    &::after{
+      font-family: "Font Awesome 5 Free";
+      content:"\f105";
+      font-weight: 900;
+      font-size:1.2em;
+      display: block;
+      position:absolute;
+      top:calc(50% - .6em);
+      right:5px;
+    }
+  }
+  
+  &__title{
+    font-size:14px;
+    margin-top: 18px;
+    letter-spacing: 0.08em;
+    text-align: center;
+  }
+}

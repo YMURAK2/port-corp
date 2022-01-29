@@ -1,0 +1,53 @@
+@use "../global/index" as g;
+
+.news {
+  margin-top: 40px;
+
+  @include g.mq(md) {
+    margin: 60px auto 0;
+    max-width: 920px;
+  }
+}
+
+.news-pagination {
+  margin-top: 40px;
+
+  @include g.mq(md) {
+    margin: 40px 0 190px;
+  }
+
+  &__list {
+    display: flex;
+    justify-content: center;
+    gap: 0 10px;
+  }
+
+  &__link {
+    display: block;
+    color: g.$white;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 45px;
+    text-align: center;
+    background-image: linear-gradient(
+      to bottom,
+      g.$green 0%,
+      g.$darkgreen 100%
+    );
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    @include g.transition($duration: 0.3s);
+
+    &:hover {
+      opacity: 0.8;
+    }
+
+    &.active {
+      color: g.$font-color;
+      background-image: none;
+      background-color: g.$gray;
+      pointer-events: none;
+    }
+  }
+}

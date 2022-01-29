@@ -1,0 +1,87 @@
+@use "../global/index" as g;
+
+.hero {
+  background-image: url(../img/hero.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  // height: 100vh;
+  color: g.$white;
+  display: flex;
+  align-items: center;
+  position: relative;
+
+  &__wrapper {
+    margin: 0 50px 0 35px;
+
+    @include g.mq(md) {
+      text-align: center;
+      margin: 0 auto;
+    }
+  }
+
+  &__main-title {
+    font-size: 48px;
+    line-height: 1.3;
+    font-weight: bold;
+    @include g.mq(md) {
+      font-size: 72px;
+    }
+  }
+
+  &__sub-title {
+    margin-top: 17px;
+    font-size: 16px;
+    line-height: 1.8125;
+    letter-spacing: 0.108em;
+    margin-bottom: 48px;
+    @include g.mq(md) {
+      font-size: 24px;
+    }
+  }
+
+
+  &__scroll {
+    writing-mode: vertical-rl;
+    font-size: 12px;
+    position: absolute;
+    right: 12px;
+    bottom: 60px;
+
+    &::after {
+      content: "";
+      display: block;
+      height: 50px;
+      width: 1px;
+      background-color: g.$white;
+      position: relative;
+      right: -7px;
+      bottom: -60px;
+      animation-name: scrollAnimation;
+      animation-fill-mode: backwards;
+      animation-duration: 1.5s;
+      animation-iteration-count: infinite;
+      animation-timing-function: cubic-bezier(1, 0, 0, 1);
+      animation-delay: 0.5s;
+      animation-direction:normal;
+    }
+
+    @keyframes scrollAnimation{
+      0% {
+        transform: scale(1, 0);
+        transform-origin: 0 0;
+      }
+      50% {
+        transform: scale(1, 1);
+        transform-origin: 0 0;
+      }
+      50.1% {
+        transform: scale(1, 1);
+        transform-origin: 0 100%;
+      }
+      100% {
+        transform: scale(1, 0);
+        transform-origin: 0 100%;
+      }
+    }
+  }
+}

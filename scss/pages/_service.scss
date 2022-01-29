@@ -1,0 +1,62 @@
+@use "../global/index" as g;
+
+.service {
+  margin: 40px auto 0;
+
+  @include g.mq(md) {
+    max-width: 1110px;
+  }
+
+  &__list {
+    text-align: center;
+    margin-top: 30px;
+  }
+
+  &__item {
+    margin-bottom: 80px;
+
+    @include g.mq(md) {
+      display: flex;
+      align-items: flex-start;
+      gap: 60px 50px;
+
+      &:nth-last-of-type(even) {
+        flex-direction: row-reverse;
+      }
+    }
+  }
+
+  &__img {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+
+    @include g.mq(md) {
+      width: 40%;
+      object-fit: contain;
+    }
+  }
+
+  &__contents {
+    @include g.mq(md) {
+      width: 60%;
+    }
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    margin: 10px 0;
+
+    @include g.mq(md) {
+      margin: 0 0 20px 0;
+      font-size: 24px;
+      text-align: left;
+    }
+  }
+
+  &__paragraph {
+    text-align: left;
+  }
+}

@@ -1,0 +1,42 @@
+@use "../global/index" as g;
+
+.footer {
+  background-color: g.$darkgreen;
+
+  &__container {
+    padding: 60px 30px 20px;
+
+    @include g.mq(md) {
+      padding: 60px 30px;
+    }
+  }
+
+  &__nav {
+    color: g.$white;
+    font-size: 12px;
+    letter-spacing: 0.06em;
+    font-weight: bold;
+    margin-bottom: 40px;
+
+    @include g.mq(md) {
+      margin-bottom: 20px;
+    }
+
+    &--list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+
+      @include g.mq(md) {
+        justify-content: center;
+      }
+    }
+  }
+
+  &__copy{
+    font-size:10px;
+    letter-spacing: 0.05em;
+    color:g.$gray;
+    text-align: center;
+  }
+}

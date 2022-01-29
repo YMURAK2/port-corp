@@ -1,0 +1,147 @@
+@use "../global/index" as g;
+
+.header {
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 10;
+  height: 65px;
+  display: flex;
+  padding: 5px 15px;
+  align-items: center;
+  justify-content: space-between;
+  @include g.transition();
+
+  &.active {
+    background-color: g.$darkgreen;
+  }
+
+  &__logo--img {
+    height: 22px;
+
+    @include g.mq(md) {
+      height: 30px;
+    }
+  }
+
+  &__global-nav {
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    justify-content: center;
+    align-items: center;
+    background-image: linear-gradient(135deg, g.$green 0%, g.$darkgreen 100%);
+    text-align: center;
+    @include g.transition();
+
+    &.active {
+      display: flex;
+      z-index: 20;
+      visibility: visible;
+      opacity: 1;
+    }
+
+    @include g.mq(md) {
+      display: block;
+      visibility: visible;
+      opacity: 1;
+      position: static;
+      background-image: none;
+    }
+
+    &--list {
+      color: g.$white;
+      font-size: 16px;
+      font-weight: bold;
+      line-height: 35px;
+      letter-spacing: 0.05em;
+
+      @include g.mq(md) {
+        display: flex;
+        font-size: 12px;
+      }
+
+      @include g.mq(lg) {
+        font-size: 16px;
+      }
+    }
+
+    &--item:not(:last-of-type) {
+      @include g.mq(md) {
+        margin-right: 25px;
+      }
+    }
+
+    &--item {
+      margin:15px 0;
+      @include g.mq(md) {
+        &::after {
+          content: "";
+          display: block;
+          position: relative;
+          bottom: 0;
+          height: 1px;
+          width: 0;
+          background-color: g.$white;
+          @include g.transition($duration: 0.3s);
+        }
+
+        &:hover::after {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &__menu-btn {
+    z-index: 20;
+    width: 40px;
+    height: 40px;
+    position: relative;
+
+    @include g.mq(md) {
+      display: none;
+    }
+  }
+
+  &__menu-btn--line {
+    display: block;
+    width: 30px;
+    height: 2px;
+    border-radius: 1px;
+    background-color: g.$white;
+    position: absolute;
+    @include g.transition();
+
+    &:nth-of-type(1) {
+      left: 5px;
+      top: 12px;
+    }
+
+    &:nth-of-type(2) {
+      left: 5px;
+      top: 20px;
+    }
+
+    &:nth-of-type(3) {
+      left: 5px;
+      top: 28px;
+    }
+
+    &.active:nth-of-type(1) {
+      transform: translateY(8px) rotate(45deg);
+    }
+    &.active:nth-of-type(2) {
+      transform: translateX(400%);
+      opacity: 0;
+    }
+    &.active:nth-of-type(3) {
+      transform: translateY(-8px) rotate(-45deg);
+    }
+  }
+}

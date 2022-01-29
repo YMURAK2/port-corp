@@ -1,0 +1,89 @@
+@use "../global/index" as g;
+
+.news-table {
+  @include g.mq(md) {
+    border-collapse: separate;
+    border-spacing: 20px 25px;
+  }
+
+  &__row {
+    display: block;
+
+    &:not(:last-of-type){
+      margin-bottom: 30px;
+    }
+
+    @include g.mq(md) {
+      display: table-row;
+      transform:translateY(-25px);
+    }
+  }
+
+  &__date {
+    font-size: 15px;
+    padding-right: 15px;
+    @include g.mq(md) {
+      padding: 0;
+    }
+  }
+
+  &__category {
+    font-size: 12px;
+    font-weight: bold;
+    text-align: center;
+
+    &--box {
+      background-color: g.$gray;
+      border-radius: 7px;
+      padding: 3px 0;
+      width: 82px;
+    }
+  }
+
+  &__contents {
+    display: block;
+    margin-top: 10px;
+    font-size: 14px;
+    line-height: 1.8em;
+    @include g.mq(md) {
+      display: table-cell;
+    }
+  }
+}
+
+.sub-page-table{
+    margin-top: 36px;
+    width: 100%;
+
+    &__row {
+      display: block;
+      padding: 15px 0;
+      border-bottom: 1px solid g.$gray;
+
+      @include g.mq(md) {
+        display: table-row;
+      }
+    }
+
+    &__title {
+      display: block;
+      padding: 3px 0;
+
+      @include g.mq(md) {
+        display: table-cell;
+        padding: 30px;
+        width: 20%;
+      }
+    }
+
+    &__contents {
+      display: block;
+      padding: 3px 0;
+
+      @include g.mq(md) {
+        display: table-cell;
+        padding: 30px;
+        width: 80%;
+      }
+    }
+}

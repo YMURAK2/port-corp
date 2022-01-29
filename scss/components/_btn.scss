@@ -1,0 +1,39 @@
+@use "../global/index" as g;
+
+.btn{
+  width:220px;
+  height: 60px;
+  border-radius: 30px;
+  font-size:15px;
+  font-weight: bold;
+  letter-spacing: 0.05em;
+  text-align: center;
+  @include g.transition($duration:.3s);
+
+  &__normal{
+    display:block;
+    margin:0 auto;
+    background-image:linear-gradient(to right, g.$green 0%, g.$darkgreen 100%) ;
+    color:g.$white;
+  }
+
+  &__trans{
+    border:1px solid g.$white;
+  }
+
+  &::after{
+    font-family: "Font Awesome 5 Free";
+    content:"\f0da";
+    position: relative;
+    right:-40px;
+    @include g.transition($duration:.3s);
+  }
+
+  &:hover{
+    opacity: 0.8;
+
+    &::after{
+      right:-50px;
+    }
+  }
+}

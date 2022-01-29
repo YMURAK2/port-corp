@@ -1,0 +1,40 @@
+@use "../global/index" as g;
+
+.works {
+  margin: 40px auto 0;
+  text-align: center;
+  max-width: 1110px;
+
+  &__list {
+
+    @include g.mq(md) {
+      display: flex;
+      flex-wrap: wrap;
+      gap:30px;
+    }
+  }
+
+  &__item {
+    margin-bottom: 80px;
+
+    @include g.mq(md) {
+    margin-bottom: 0px;
+    }
+
+    &--link {
+      font-size: 16px;
+    }
+
+    &--img {
+      display: block;
+      width: 100%;
+      margin-bottom: 12px;
+      box-shadow: 0 0 15px 0 rgba(0, 0, 0, 0.2);
+
+      @include g.mq(md) {
+        max-width: 350px;
+      }
+      
+    }
+  }
+}

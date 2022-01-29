@@ -1,0 +1,25 @@
+@use "../global/index" as g;
+
+.page-top{
+  width:100%;
+  background-image:url('../img/hero.jpg');
+  background-size:cover;
+  background-repeat: no-repeat;
+
+  &__title{
+    padding:90px 0 40px;
+
+    @include g.mq(md) {
+      padding:106px 0 70px;
+    }
+  }
+
+  .heading__main{
+    color:g.$white;
+  }
+
+  .heading__sub{
+    color:g.$white;
+  }
+
+}

@@ -1,0 +1,8 @@
+@use "../global/index" as g;
+
+.sns-share {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 10px;
+  margin-top: 60px;
+}

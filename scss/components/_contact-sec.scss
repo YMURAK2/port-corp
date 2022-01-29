@@ -1,0 +1,23 @@
+@use "../global/index" as g;
+
+.contact-sec {
+  margin-top: 80px;
+  background-color: g.$gray;
+  text-align: center;
+
+  @include g.mq(md) {
+    margin-top: 100px;
+  }
+
+  &__container {
+    padding: 60px;
+
+    @include g.mq(md) {
+      padding: 80px;
+    }
+  }
+
+  &__paragraph{
+    margin:30px 0;
+  }
+}

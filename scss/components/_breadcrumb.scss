@@ -1,0 +1,47 @@
+@use "../global/index" as g;
+
+.breadcrumb {
+  height: 25px;
+  line-height: 25px;
+  background-color: g.$lightgray;
+
+  @include g.mq(md) {
+    height: 40px;
+    line-height: 40px;
+  }
+
+  &__list {
+    font-size: 11px;
+    padding: 0 20px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+
+
+    @include g.mq(md) {
+      font-size: 12px;
+      max-width: 1110px;
+      margin: 0 auto;
+    }
+  }
+
+  &__item {
+    display: inline;
+    &:not(:last-of-type) {
+      color: g.$green;
+      margin-right:20px;
+
+      &::after {
+        content: ">";
+        color: g.$font-color;
+        position: relative;
+        right: -8px;
+      }
+    }
+
+    &:last-of-type {
+      pointer-events: none;
+
+    }
+  }
+}

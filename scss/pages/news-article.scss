@@ -1,0 +1,141 @@
+@use "../global/index" as g;
+
+.news-article {
+  margin: 40px auto 0;
+  max-width: 750px;
+
+  @include g.mq(md) {
+    margin-top: 70px;
+  }
+
+  &__title {
+    font-size: 22px;
+    line-height: calc(34 / 22);
+    margin-bottom: 52px;
+
+    @include g.mq(md) {
+      font-size: 32px;
+      line-height: calc(46 / 32);
+      margin-bottom: 10px;
+    }
+  }
+
+  &__info {
+    margin: 0 0 17px 5px;
+    display: flex;
+    align-items: center;
+    gap: 0 20px;
+
+    @include g.mq(md) {
+      margin: 0 0 30px 0;
+    }
+  }
+
+  &__date {
+    font-size: 13px;
+  }
+
+  &__category {
+    font-size: 11px;
+    font-weight: bold;
+    text-align: center;
+    background-color: g.$gray;
+    border-radius: 7px;
+    padding: 3px 0;
+    width: 82px;
+
+    @include g.mq(md) {
+      font-size: 12px;
+    }
+  }
+
+  &__img {
+    width: 100%;
+    object-fit: cover;
+    margin-bottom: 30px;
+  }
+
+  &__contents {
+    font-size: 14px;
+    line-height: calc(24 / 14);
+
+    @include g.mq(md) {
+      font-size: 15px;
+      line-height: calc(25 / 15);
+    }
+  }
+
+  &__main {
+    margin-top: 56px;
+
+    @include g.mq(md) {
+      margin-top: 82px;
+    }
+
+    &--heading {
+      font-size: 18px;
+      padding-left: 18px;
+      line-height: 1.5;
+      position: relative;
+      margin-bottom: 18px;
+
+      &::before {
+        display: inline-block;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 6px;
+        border-radius: 3px;
+        background-color: g.$green;
+      }
+
+      @include g.mq(md) {
+        font-size: 24px;
+        padding-left: 24px;
+        margin-bottom: 24px;
+      }
+    }
+
+    &--contents{
+      font-size:14px;
+      line-height: calc(24 / 14);
+    }
+  }
+
+  &__sub {
+    margin-top: 56px;
+
+    &--heading {
+      font-size: 16px;
+      padding-left: 16px;
+      line-height: 1.5;
+      position: relative;
+      margin-bottom: 18px;
+
+      &::before {
+        display: inline-block;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 6px;
+        border-radius: 3px;
+        background-color: g.$green;
+      }
+
+      @include g.mq(md) {
+        font-size: 24px;
+        padding-left: 24px;
+        margin-bottom: 24px;
+      }
+    }
+
+    &--contents{
+      font-size:14px;
+      line-height: calc(24 / 14);
+    }
+  }
+}
